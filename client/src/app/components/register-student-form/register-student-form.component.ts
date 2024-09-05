@@ -16,13 +16,12 @@ export class RegisterStudentFormComponent implements OnInit{
 ngOnInit(): void {
   this.studentForm=this.fb.group(
     {
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
+     
+      name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      dob: ['', Validators.required],
-      gender: ['', Validators.required],
-      phone: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
-      address: ['', Validators.required]
+      age: ['', Validators.required],
+      standard: ['', Validators.required],
+    
     }
   )
 }
