@@ -1,1 +1,23 @@
-<p>display-student-list works!</p>
+<div *ngIf="studentList.length; else noData">
+    <h2>Student List</h2>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>standard</th>
+      </tr>
+      <tr *ngFor="let student of studentList">
+        <td>{{ student.id }}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.age }}</td>
+        <td>{{ student.standard }}</td>
+      </tr>
+    </table>
+  </div>
+  
+  <ng-template #noData>
+    <p>No students available or an error occurred.</p>
+    <p *ngIf="errorMessage">{{ errorMessage }}</p>
+  </ng-template>
+  
